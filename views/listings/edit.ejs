@@ -1,0 +1,82 @@
+<% layout('/layouts/boilerplate.ejs') -%>
+<body>
+  <div class="row mt-5">
+    <div class="col-8 offset-2">
+      <h3>Edit Listing</h3>
+      <form
+        method="POST"
+        action="/listings/<%=listdata.id%>?_method=PUT"
+        novalidate
+        class="needs-validation"
+        enctype="multipart/form-data"
+      >
+        <div class="mb-3">
+          <label class="form-label"> Title</label>
+          <input
+            type="text"
+            value="<%=listdata.title%>"
+            name="listing[title]"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">Enter Title to add</div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label"> Description</label>
+          <textarea name="listing[description]" class="form-control" required>
+<%=listdata.description%></textarea
+          >
+          <div class="invalid-feedback">Enter Description to add</div>
+        </div>
+        <div class="mb-3">
+          <img class="size" src="<%=originalUrl%>" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Update Image</label>
+          <input type="file" name="listing[image]" class="form-control" />
+        </div>
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <label class="form-label"> Price</label>
+            <input
+              type="number"
+              value="<%=listdata.price%>"
+              name="listing[price]"
+              class="form-control"
+              required
+            />
+            <div class="invalid-feedback">Enter Price to add</div>
+          </div>
+
+          <div class="col-md-4">
+            <label class="form-label"> Location</label
+            ><input
+              type="text"
+              value="<%=listdata.location%>"
+              name="listing[location]"
+              class="form-control"
+              required
+            />
+            <div class="invalid-feedback">Enter Location to add</div>
+          </div>
+        </div>
+
+        <div class="mb-5">
+          <label class="form-label">Country </label>
+          <input
+            type="text"
+            value="<%=listdata.country%>"
+            name="listing[country]"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">Enter Country to add</div>
+        </div>
+
+        <button class="btn new-btn">Submit</button>
+      </form>
+    </div>
+  </div>
+</body>
