@@ -75,9 +75,7 @@ app.listen("8080",() => {
     console.log("Server Started");
 })
 
-app.get("/",(req,res) => {
-    res.send("Hii its working");
-})
+
 
 app.use((req,res,next) => {
     res.locals.success = req.flash("success");
