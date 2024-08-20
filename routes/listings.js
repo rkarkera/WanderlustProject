@@ -23,7 +23,7 @@ router.get("/search",isLogged,wrapAsync(ListingController.listingSearch));
 //show route //update post //delete
 router.route("/:id")
 .get(wrapAsync(ListingController.showListing))
-.put(isLogged,isOwner,upload.single('listing[image]'),validateListing,wrapAsync(ListingController.updateListingDatabase))
+.put(isLogged,isOwner,upload.single('listing[image]'),wrapAsync(ListingController.updateListingDatabase))
 .delete(isLogged,isOwner,wrapAsync(ListingController.destroyListingDatabase));
 
 //update Form
