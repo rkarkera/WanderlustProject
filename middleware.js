@@ -7,7 +7,7 @@ module.exports.isLogged = (req,res,next) => {
     if(!req.isAuthenticated()) {
         req.session.redirectUrl = req.originalUrl;
         req.flash("error","You must be loggedIn to create listings!")
-         return res.redirect("/login");
+         return res.redirect("/user/login");
     }
     next();  
 }
@@ -62,7 +62,7 @@ module.exports.validateSignup = (req,res,next) => {
     let result = SignUpSchema.validate(req.body);
     if(result.error) {
         req.flash("error",result.error.message);
-        res.redirect("/signup");
+        res.redirect("/user/signup");
     } else {
         next();
     }

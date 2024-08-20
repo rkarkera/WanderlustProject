@@ -48,7 +48,7 @@
             required
           >
             <option value="<%=listdata.category%>" selected>
-              <%=listdata.category.toUpperCase()%>
+              <%=listdata.category.toUpperCase()+ listdata.category.slice(1)%>
             </option>
             <option value="trending">Trending</option>
             <option value="rooms">Rooms</option>
