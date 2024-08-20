@@ -11,11 +11,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link" href="/listings">Explore</a>
+        <a class="nav-link" href="/">Explore</a>
       </div>
       <% if(user) { %>
       <div class="navbar-nav ms-auto">
-        <form method="get" action="/listings/search" class="d-flex">
+        <form method="get" action="/search" class="d-flex">
           <input
             class="form-control me-2 search-ipt"
             type="text"
@@ -29,7 +29,7 @@
       </div>
       <% } %>
       <div class="navbar-nav ms-auto">
-        <a class="nav-link" href="/listings/new">List your home</a>
+        <a class="nav-link" href="/new">List your home</a>
         <% if(user) { %>
         <a class="nav-link" href="/logout"><b>Logout</b></a>
         <% } else { %>
