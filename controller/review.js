@@ -13,7 +13,7 @@ module.exports.createReview = async (req,res) => {
     await review.save();
     await listing.save();
     req.flash("success","Review is saved");
-    res.redirect(`/listings/${id}`);
+    res.redirect(`/${id}`);
 }
 
 module.exports.destroyReview =  async (req,res) => {
@@ -21,5 +21,5 @@ module.exports.destroyReview =  async (req,res) => {
     await Review.findByIdAndDelete(reviewid);
     await Listing.findByIdAndUpdate(id,{$pull : {reviews : reviewid}});
     req.flash("success","Review is deleted");
-    res.redirect(`/listings/${id}`);
+    res.redirect(`/${id}`);
 }

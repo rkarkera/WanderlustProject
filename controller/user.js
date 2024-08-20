@@ -18,7 +18,7 @@ module.exports.userDatabase = async (req,res) => {
             return next(err);
         } else {
             req.flash("success","Welcome to Wanderlust");
-            res.redirect("/listings");
+            res.redirect("/");
         }
     })
     
@@ -34,7 +34,7 @@ module.exports.loginPage = (req,res) => {
 
 module.exports.loginRequest = async(req,res) => {
     req.flash("success","Welcome to WanderLust");
-    let path = res.locals.originalUrl || "/listings";
+    let path = res.locals.originalUrl || "/";
     res.redirect(path);
 }
 
@@ -44,7 +44,7 @@ module.exports.logoutRequest = (req,res) => {
             return next(err);
         } else {
             req.flash("success","You are logged out!");
-            return res.redirect("/listings");
+            return res.redirect("/");
         }
     })
 }

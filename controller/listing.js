@@ -29,7 +29,7 @@ module.exports.addListingDatabase = async (req,res,next) => {
      let list = await newList.save();
      console.log(list);
     req.flash("success","New Listing Created");
-    res.redirect("/listings"); 
+    res.redirect("/"); 
 }
 
 module.exports.showListing = async (req,res) => {
@@ -37,7 +37,7 @@ module.exports.showListing = async (req,res) => {
     let data = await Listing.findById(id).populate({path : "reviews",populate:{path : "author"}}).populate("owner");
     if(!data) {
      req.flash("error","Listing not found!");
-     res.redirect("/listings");
+     res.redirect("/");
     } else {
     res.render("./listings/show.ejs",{data});
     }
@@ -48,7 +48,7 @@ module.exports.showListing = async (req,res) => {
     let listdata = await Listing.findById(id);
     if(!listdata) {
      req.flash("error","Listing not found!");
-     res.redirect("/listings");
+     res.redirect("/");
     }
     let originalUrl = listdata.image.url;
     originalUrl = originalUrl.replace("/upload","/upload/c_fill,h_200,w_250");
@@ -66,7 +66,7 @@ module.exports.showListing = async (req,res) => {
         await listing.save();
     }
     req.flash("success","Listing is edited");
-    res.redirect(`/listings/${id}`);
+    res.redirect(`/${id}`);
  }
 
  module.exports.destroyListingDatabase = async(req,res) => {
@@ -74,7 +74,7 @@ module.exports.showListing = async (req,res) => {
     let deleteData = await Listing.findByIdAndDelete(id);
     console.log(deleteData);
     req.flash("success","Listing is deleted");
-    res.redirect("/listings");  
+    res.redirect("/");  
 }
 
 module.exports.listingCategory = async(req,res) => {

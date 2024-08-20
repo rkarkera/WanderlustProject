@@ -30,8 +30,8 @@
 
   <% if(user && user._id.equals(data.owner.id)) { %>
   <div class="btn1 offset-2">
-    <a href="/listings/<%=data.id%>/edit" class="btn new-btn">Edit</a>
-    <form method="post" action="/listings/<%=data.id%>?_method=DELETE">
+    <a href="/<%=data.id%>/edit" class="btn new-btn">Edit</a>
+    <form method="post" action="/<%=data.id%>?_method=DELETE">
       <button class="btn btn-dark offset-4">Delete</button>
     </form>
   </div>

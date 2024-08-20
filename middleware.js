@@ -24,7 +24,7 @@ module.exports.isOwner = async (req,res,next) => {
     let listing = await Listing.findById(id);
     if(!listing.owner.equals(req.user._id)) {
         req.flash("error","You are not an  owner");
-        return res.redirect(`/listings/${id}`);
+        return res.redirect(`/${id}`);
     }
     next();
 }
@@ -52,7 +52,7 @@ module.exports.reviewOwner = async (req,res,next) => {
     let review = await Review.findById(reviewid);
     if(!review.author.equals(res.locals.user._id)) {
        req.flash("error","You are not the author of this review");
-       return res.redirect(`/listings/${id}`);
+       return res.redirect(`/${id}`);
     }
     next();
  
