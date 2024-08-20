@@ -47,7 +47,9 @@
             name="listing[category]"
             required
           >
-            <option selected><%=listdata.category%></option>
+            <option value="<%=listdata.category%>" selected>
+              <%=listdata.category.toUpperCase()%>
+            </option>
             <option value="trending">Trending</option>
             <option value="rooms">Rooms</option>
             <option value="iconic-cities">Iconic Cities</option>
