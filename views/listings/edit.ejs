@@ -37,6 +37,29 @@
           <label class="form-label">Update Image</label>
           <input type="file" name="listing[image]" class="form-control" />
         </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="category">Category</label>
+          <select
+            class="form-select form-select-sm"
+            aria-label="Small select example"
+            id="category"
+            name="listing[category]"
+            required
+          >
+            <option selected><%=listdata.category%></option>
+            <option value="trending">Trending</option>
+            <option value="rooms">Rooms</option>
+            <option value="iconic-cities">Iconic Cities</option>
+            <option value="mountains">Mountains</option>
+            <option value="castles">Castles</option>
+            <option value="amazing-pools">Amazing Pools</option>
+            <option value="camping">Camping</option>
+            <option value="farms">Farms</option>
+            <option value="arctic">Arctic</option>
+          </select>
+        </div>
+
         <div class="row mb-3">
           <div class="col-md-4">
             <label class="form-label"> Price</label>

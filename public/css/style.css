@@ -222,3 +222,7 @@ body {
     font-size: 0.8rem;
     margin-left: 0.3rem;
   }
+
+  .tax-info {
+    display: none;
+  }
