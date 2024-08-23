@@ -12,7 +12,7 @@ router.route("/signup")
 
 router.route("/login")
 .get(UsersController.loginPage)
-.post(saveOriginalUrl,passport.authenticate('local', { failureRedirect: '/login' ,failureFlash:true}), UsersController.loginRequest);
+.post(saveOriginalUrl,passport.authenticate('local', { failureRedirect: '/user/login' ,failureFlash:true}), UsersController.loginRequest);
 
 
 router.get("/logout",UsersController.logoutRequest);

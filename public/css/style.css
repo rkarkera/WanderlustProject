@@ -18,7 +18,7 @@ body {
 /* navbar */
 .navbar {
     background-color: white;
-    height: 5rem;
+    /* height: 5rem; */
 }
 
 .fa-regular {
@@ -115,6 +115,8 @@ body {
     height: 12rem;
     width: 15rem;
 }
+
+/* map */
 
 #map { 
     height: 300px;
@@ -226,3 +228,5 @@ body {
   .tax-info {
     display: none;
   }
+
+  

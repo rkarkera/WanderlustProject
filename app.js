@@ -30,6 +30,7 @@ app.use(express.static(path.join(__dirname,"/public")));
 
 
 const dburl = process.env.ATLAS_URL;
+// const lodb = 'mongodb://127.0.0.1:27017/wanderlust1';
 
 const store = MongoStore.create({
     mongoUrl: dburl,
@@ -41,6 +42,7 @@ const store = MongoStore.create({
 const sessionOptions =  {
     store,
     secret: process.env.SECRET,
+    // secret:"cat",
     resave: false,
     saveUninitialized: true,
     cookie : {
