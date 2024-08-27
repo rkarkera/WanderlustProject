@@ -26,11 +26,11 @@ app.set("views",path.join(__dirname,"views"));
 app.use(express.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
 app.engine('ejs', engine);
+app.use(express.static('public'));
 app.use(express.static(path.join(__dirname,"/public")));
 
 
 const dburl = process.env.ATLAS_URL;
-// const lodb = 'mongodb://127.0.0.1:27017/wanderlust1';
 
 const store = MongoStore.create({
     mongoUrl: dburl,
