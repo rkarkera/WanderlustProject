@@ -167,17 +167,21 @@ body {
   } */
 
   @media (max-width: 998px) {
-    .tax-toggle {
+    /* .tax-toggle {
       width: 19rem;
       margin-left: 1rem;
     }
     .tax-toggle label {
       font-size: 0.5rem;
       height: 1rem;
+    } */
+
+    .tax-toggle {
+      display: none;
     }
   }
 
-  @media (min-width: 400px) and (max-width: 800px) {
+  /* @media (min-width: 400px) and (max-width: 800px) {
     .tax-toggle {
       width: 10rem;
       margin-left: 1rem;
@@ -190,7 +194,7 @@ body {
       margin-left: 1rem;
       font-size: 1rem;
     }
-  }
+  } */
 
   /* //filter */
   .filter a {
